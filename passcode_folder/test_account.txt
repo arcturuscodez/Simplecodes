@@ -1,3 +1,0 @@
-Account Name: test_account
-Encrypted Username: gAAAAABk0MeOupt4BkZ52pEdF-HqBzTEEeLcc8UMNsIatoXKWXHA2fnrrmMMNSMZCO2GbxEJ0HBDiOBNFBQlpV8kDSDS9fYSQg==
-Encrypted Password: gAAAAABk0MeOsFnQ2ElaY9L7ufwURUCk-I74nkzOm7gDZdd-3AvWyZZWdTQRJYGTjt4NgQH3k-SKCLdTN3m6ey1UoLniRLHnCQ==
