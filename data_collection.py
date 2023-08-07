@@ -1,7 +1,7 @@
 import datetime
 import csv
 import os
-from main import get_ip_address
+from utils import get_ip_address
 
 def collect_user_data(username, action):
     timestamp = datetime.datetime.now()

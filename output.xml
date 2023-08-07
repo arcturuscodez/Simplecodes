@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.6 on win32)" generated="20230807 13:29:33.860" rpa="false" schemaversion="3">
+<suite id="s1" name="Testsuite" source="c:\Users\sonny\Desktop\PCFolder\pscg\testsuite.robot">
+<test id="s1-t1" name="Test Encryption Key Generation And Saving" line="8">
+<kw name="Generate And Save Encryption Key" library="testlibrary">
+<msg timestamp="20230807 13:29:34.287" level="INFO">Encryption key saved successfully!</msg>
+<status status="PASS" starttime="20230807 13:29:34.284" endtime="20230807 13:29:34.344"/>
+</kw>
+<kw name="Load Encryption Key" library="testlibrary">
+<status status="PASS" starttime="20230807 13:29:34.346" endtime="20230807 13:29:34.351"/>
+</kw>
+<status status="PASS" starttime="20230807 13:29:34.280" endtime="20230807 13:29:34.353"/>
+</test>
+<test id="s1-t2" name="Test Credentials Generation" line="12">
+<kw name="Generate And Save Encryption Key" library="testlibrary">
+<msg timestamp="20230807 13:29:34.358" level="INFO">Encryption key saved successfully!</msg>
+<status status="PASS" starttime="20230807 13:29:34.357" endtime="20230807 13:29:34.359"/>
+</kw>
+<kw name="Generate Credentials" library="testlibrary">
+<arg>${account_name}</arg>
+<msg timestamp="20230807 13:29:34.589" level="INFO">Credentials saved successfully!</msg>
+<status status="PASS" starttime="20230807 13:29:34.360" endtime="20230807 13:29:34.590"/>
+</kw>
+<status status="PASS" starttime="20230807 13:29:34.355" endtime="20230807 13:29:34.591"/>
+</test>
+<test id="s1-t3" name="Test Access With New Encryption Key" line="16">
+<kw name="Generate And Save Encryption Key" library="testlibrary">
+<msg timestamp="20230807 13:29:34.596" level="INFO">Encryption key saved successfully!</msg>
+<status status="PASS" starttime="20230807 13:29:34.594" endtime="20230807 13:29:34.597"/>
+</kw>
+<kw name="Generate Credentials" library="testlibrary">
+<arg>${account_name}</arg>
+<msg timestamp="20230807 13:29:34.600" level="INFO">Credentials saved successfully!</msg>
+<status status="PASS" starttime="20230807 13:29:34.598" endtime="20230807 13:29:34.601"/>
+</kw>
+<kw name="Generate And Save Encryption Key" library="testlibrary">
+<msg timestamp="20230807 13:29:34.604" level="INFO">Encryption key saved successfully!</msg>
+<status status="PASS" starttime="20230807 13:29:34.602" endtime="20230807 13:29:34.604"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${result}</var>
+<arg>access_credentials</arg>
+<arg>${account_name}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Access Credentials" library="testlibrary">
+<arg>${account_name}</arg>
+<msg timestamp="20230807 13:29:34.614" level="FAIL">Failed to access saved credentials.</msg>
+<status status="FAIL" starttime="20230807 13:29:34.606" endtime="20230807 13:29:34.777"/>
+</kw>
+<msg timestamp="20230807 13:29:34.777" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20230807 13:29:34.605" endtime="20230807 13:29:34.778"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${result}</arg>
+<arg>${False}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230807 13:29:34.779" endtime="20230807 13:29:34.780"/>
+</kw>
+<status status="PASS" starttime="20230807 13:29:34.592" endtime="20230807 13:29:34.781"/>
+</test>
+<test id="s1-t4" name="Test Generate Credentials Without Encryption Key" line="23">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${result}</var>
+<arg>generate_credentials</arg>
+<arg>${account_name}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Generate Credentials" library="testlibrary">
+<arg>${account_name}</arg>
+<msg timestamp="20230807 13:29:34.789" level="FAIL">Encryption key not found.</msg>
+<status status="FAIL" starttime="20230807 13:29:34.787" endtime="20230807 13:29:34.789"/>
+</kw>
+<msg timestamp="20230807 13:29:34.790" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20230807 13:29:34.786" endtime="20230807 13:29:34.791"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${result}</arg>
+<arg>${False}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230807 13:29:34.792" endtime="20230807 13:29:34.793"/>
+</kw>
+<status status="PASS" starttime="20230807 13:29:34.784" endtime="20230807 13:29:34.795"/>
+</test>
+<test id="s1-t5" name="Test Access Credentials Without Encryption Key" line="27">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${result}</var>
+<arg>access_credentials</arg>
+<arg>${account_name}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Access Credentials" library="testlibrary">
+<arg>${account_name}</arg>
+<msg timestamp="20230807 13:29:34.802" level="FAIL">Encryption key not found.</msg>
+<status status="FAIL" starttime="20230807 13:29:34.800" endtime="20230807 13:29:34.802"/>
+</kw>
+<msg timestamp="20230807 13:29:34.803" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20230807 13:29:34.799" endtime="20230807 13:29:34.804"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${result}</arg>
+<arg>${False}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230807 13:29:34.810" endtime="20230807 13:29:34.812"/>
+</kw>
+<status status="PASS" starttime="20230807 13:29:34.796" endtime="20230807 13:29:34.822"/>
+</test>
+<test id="s1-t6" name="Test Access Credentials With Correct Encryption Key" line="31">
+<kw name="Generate And Save Encryption Key" library="testlibrary">
+<msg timestamp="20230807 13:29:34.829" level="INFO">Encryption key saved successfully!</msg>
+<status status="PASS" starttime="20230807 13:29:34.827" endtime="20230807 13:29:34.829"/>
+</kw>
+<kw name="Generate Credentials" library="testlibrary">
+<arg>${account_name}</arg>
+<msg timestamp="20230807 13:29:34.833" level="INFO">Credentials saved successfully!</msg>
+<status status="PASS" starttime="20230807 13:29:34.830" endtime="20230807 13:29:34.834"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${result}</var>
+<arg>access_credentials</arg>
+<arg>${account_name}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Access Credentials" library="testlibrary">
+<arg>${account_name}</arg>
+<status status="PASS" starttime="20230807 13:29:34.838" endtime="20230807 13:29:34.844"/>
+</kw>
+<msg timestamp="20230807 13:29:34.845" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20230807 13:29:34.836" endtime="20230807 13:29:34.845"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${result}</arg>
+<arg>${True}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230807 13:29:34.846" endtime="20230807 13:29:34.848"/>
+</kw>
+<status status="PASS" starttime="20230807 13:29:34.824" endtime="20230807 13:29:34.849"/>
+</test>
+<status status="PASS" starttime="20230807 13:29:33.905" endtime="20230807 13:29:34.852"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="6" fail="0" skip="0" id="s1" name="Testsuite">Testsuite</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

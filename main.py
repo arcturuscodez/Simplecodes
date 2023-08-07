@@ -3,12 +3,6 @@ import string
 import socket
 import os
 from cryptography.fernet import Fernet
-import data_collection
-
-def get_ip_address():
-    hostname = socket.gethostname()
-    ip_address = socket.gethostbyname(hostname)
-    return ip_address
 
 def generate_encryption_key():
     return Fernet.generate_key()
@@ -110,9 +104,6 @@ def generate_credentials():
         print("Encryption key not found.")
 
 def main():
-    encryption_key = load_encryption_key()
-    if not encryption_key:
-        print("Encryption key not found.")
 
     while True:
         print("Enter '1' to generate credentials, '2' to encrypt the passcodes folder, '3' to decrypt the passcodes folder, '4' to generate a new encryption key, or '0' to exit:")
